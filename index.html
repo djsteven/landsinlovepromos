@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Promociones Lands in love</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Ste Brennan - Code Computerlove - http://www.codecomputerlove.com/" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<link href="js/jquery.mobile-1.0rc2.min.css" rel="stylesheet" />
+	<link href="jquery-mobile.css" type="text/css" rel="stylesheet" />
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="../js/code.util.jquery-1.0.61.js"></script>
+	
+	
+	<script type="text/javascript">
+		
+		/*
+		 * IMPORTANT!!!
+		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
+		 * If you don't this will mess with how jQuery Mobile works
+		 */
+		
+		(function(window, $, PhotoSwipe){
+			
+			$(document).ready(function(){
+				
+				$('div.gallery-page')
+					.live('pageshow', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							options = {},
+							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+							
+						return true;
+						
+					})
+					
+					.live('pagehide', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+							PhotoSwipe.detatch(photoSwipeInstance);
+						}
+						
+						return true;
+						
+					});
+				
+			});
+		
+		}(window, window.jQuery, window.Code.PhotoSwipe));
+		
+	</script>
+
+</head>
+<body>
+<div data-role="page" id="Home">
+<div data-role="header">
+<h1>Promociones Lands in love</h1>
+</div>
+<div data-role="content">
+<p>Hecha un vistazo a nuestros paquetes y elije el que te guste m&aacute;s:</p>
+<ul data-role="listview" data-inset="true">
+<li><a href="#fin-semana">Fin de semana!</a></li>
+<li><a href="#entre-semana">Entre semana!</a></li>
+<li><a href="#tours-un-dia">Tours de un día!</a></li>
+<!--<li><a href="#Gallery2">Paquetes entre semana</a></li> 
+            <li><a href="#Gallery3">Tours de un día</a></li> --></ul>
+<p>Si deseas realizar una reservaci&oacute;n te invitamos a ingresar al siguiente enlace:</p>
+<ul data-role="listview" data-inset="true">
+<li><a href="http://en.co.cr/facebook/promos-landsinlove2013/promos/reservacion-movil/" target="_self">Reservaciones</a></li>
+<li><a href="mapa.html" target="_self">Mapa del Hotel</a></li>
+<li><a href="tel:+50624479331" >Click para llamar</a></li>
+</ul>
+</div>
+<div data-role="footer">
+<h4>&copy; 2013 Lands in love</h4>
+</div>
+</div>
+<div data-role="page" data-add-back-btn="true" id="fin-semana" class="gallery-page">
+<div data-role="header">
+<h1>Promociones aplicables para fin de semana!</h1>
+</div>
+<div data-role="content">
+
+<!-- Paquetes fin de semana -->
+<ul class="gallery">
+<li><a href="images/oferta-romantica-1-noche.jpg" rel="external"><img src="images/oferta-romantica-1-noche-small.jpg" alt="OFERTA ROM&Aacute;NTICA DE UNA NOCHE" /></a></li>
+<li><a href="images/promo-3-noche-gratis.jpg" rel="external"><img src="images/promo-3-noche-gratis-small.jpg" alt="TERCERA NOCHE GRATIS" /></a></li>
+<li><a href="images/promo-verano-de-aventura.jpg" rel="external"><img src="images/promo-verano-de-aventura-small.jpg" alt="VERANO DE AVENTURA" /></a></li>
+<li><a href="images/oferta-romantica-fin-de-semana.jpg" rel="external"><img src="images/oferta-romantica-fin-de-semana-small.jpg" alt="OFERTA ROM&Aacute;NTICA" /></a></li>
+</ul>
+</div><div data-role="footer">
+<h4><a href="../promos/reservacion-movil/" target="_self">Click para reservar</a> | <a href="tel:+50624479331">Click para llamar!</a></h4>
+</div></div>
+
+<!--Paquetes entre semana -->
+<div data-role="page" data-add-back-btn="true" id="entre-semana" class="gallery-page">
+<div data-role="header">
+<h1>Promociones aplicables entre semana!</h1>
+</div>
+<div data-role="content">
+
+<!-- paquetes entre semana -->
+<ul class="gallery">
+<li><a href="images/promocion-sistema-todo-incluido.jpg" rel="external"><img src="images/promocion-sistema-todo-incluido-small.jpg" alt="PROMOCION SISTEMA TODO INCLUIDO" /></a></li>
+<li><a href="images/promocion-entre-semana.jpg" rel="external"><img src="images/promocion-entre-semana-small.jpg" alt="PROMOCI&Oacute;N ENTRE SEMANA" /></a></li>
+<li><a href="images/promo-28mil-entre-semana.jpg" rel="external"><img src="images/promo-28mil-entre-semana-small.jpg" alt="SUPER PROMO ENTRE SEMANA" /></a></li>
+<li><a href="images/promo-verano-de-aventura-entre-semana.jpg" rel="external"><img src="images/promo-verano-de-aventura-entre-semana-small.jpg" alt="VERANO DE AVENTURA ENTRE SEMANA" /></a></li>
+<li><a href="images/oferta-romantica-entre-semana.jpg" rel="external"><img src="images/oferta-romantica-entre-semana-small.jpg" alt="OFERTA ROM&Aacute;NTICA ENTRE SEMANA" /></a></li>
+</ul>
+
+</div>
+<div data-role="footer">
+<h4><a href="../promos/reservacion-movil/" target="_self">Click para reservar</a> | <a href="tel:+50624479331">Click para llamar!</a></h4>
+</div>
+</div>
+
+
+
+<!--PAGINA 3 -->
+<div data-role="page" data-add-back-btn="true" id="tours-un-dia" class="gallery-page">
+<div data-role="header">
+<h1>Tours de un día!</h1>
+</div>
+<div data-role="content">
+
+
+<!-- Tour de un día -->
+<ul class="gallery">
+<li><a href="images/noviembre-de-amor-2x1.jpg" rel="external"><img src="images/noviembre-de-amor-2x1-small.jpg" alt="NOVIEMBRE DE AMOR 2X1" /></a></li>
+<li><a href="images/noviembre-de-locos-2x1.jpg" rel="external"><img src="images/noviembre-de-locos-2x1-small.jpg" alt="NOVIEMBRE DE LOCOS 2X1" /></a></li>
+<li><a href="images/noviembre-de-familia.jpg" rel="external"><img src="images/noviembre-de-familia-small.jpg" alt="NOVIEMBRE DE FAMILIA 2X1" /></a></li>
+<li><a href="images/super-noviembre-2x1.jpg" rel="external"><img src="images/super-noviembre-2x1-small.jpg" alt="SUPER NOVIEMBRE 2X1" /></a></li>
+<li><a href="images/noviembre-aventura.jpg" rel="external"><img src="images/noviembre-aventura-small.jpg" alt="NOVIEMBRE DE AVENTURA 2X1" /></a></li>
+<li><a href="images/noviembre-humedo-2x1.jpg" rel="external"><img src="images/noviembre-humedo-2x1-small.jpg" alt="NOVIEMBRE HUMEDO 2X1" /></a></li>
+<li><a href="images/paquete-todo-incluido.jpg" rel="external"><img src="images/paquete-todo-incluido-small.jpg" alt="PAQUETE TODO INCLUIDO" /></a></li>
+<li><a href="images/aventura-extrema-2x1.jpg" rel="external"><img src="images/aventura-extrema-2x1-small.jpg" alt="MEGA OFERTA 2X1" /></a></li>
+<li><a href="images/mega-promo-2x1.jpg" rel="external"><img src="images/mega-promo-2x1-small.jpg" alt="MEGA OFERTA 2X1" /></a></li>
+<li><a href="images/aventura-extrema.jpg" rel="external"><img src="images/aventura-extrema-small.jpg" alt="AVENTURA EXTREMA" /></a></li>
+<li><a href="images/tour-de-un-dia.jpg" rel="external"><img src="images/tour-de-un-dia-small.jpg" alt="TOUR DE UN DIA" /></a></li>
+<li><a href="images/rapel-2x1.jpg" rel="external"><img src="images/rapel-2x1-small.jpg" alt="MEGA OFERTA 2 2X1" /></a></li>
+<li><a href="images/tour-un-dia-2.jpg" rel="external"><img src="images/tour-un-dia-2-small.jpg" alt="TOUR DE UN DIA 2" /></a></li>
+
+</ul>
+</div>
+<div data-role="footer">
+<h4><a href="../promos/reservacion-movil/" target="_self">Click para reservar</a> | <a href="tel:+50624479331">Click para llamar!</a></h4>
+</div>
+</div>
+
+<!--MAPA DEL HOTEL -->
+<div data-role="page" data-add-back-btn="true" id="mapa-del-hotel" class="gallery-page">
+<div data-role="header">
+<h1>Mapa del Hotel</h1>
+</div>
+<div data-role="content">
+
+<!-- Mapa del hotel -->
+<!-- Responsive iFrame -->
+<div class="Flexible-container">
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+<iframe onload='javascript:resizeIframe(this);' width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msid=205870868162232183845.0004eb021d15c21582fa5&amp;msa=0&amp;ie=UTF8&amp;ll=10.272323,-84.524249&amp;spn=0.018939,0.033023&amp;t=h&amp;output=embed"></iframe>
+</div>
+
+<!-- /Mapa del hotel -->
+</div>
+<div data-role="footer">
+<h4><a href="../promos/reservacion-movil/" target="_self">Click para reservar</a> | <a href="tel:+50624479331">Click para llamar!</a></h4>
+</div>
+</div>
+</body>
+</html>

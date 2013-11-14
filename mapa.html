@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Promociones Lands in love</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Ste Brennan - Code Computerlove - http://www.codecomputerlove.com/" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<link href="js/jquery.mobile-1.0rc2.min.css" rel="stylesheet" />
+	<link href="jquery-mobile.css" type="text/css" rel="stylesheet" />
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="../js/code.util.jquery-1.0.61.js"></script>
+	
+	
+	<script type="text/javascript">
+		
+		/*
+		 * IMPORTANT!!!
+		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
+		 * If you don't this will mess with how jQuery Mobile works
+		 */
+		
+		(function(window, $, PhotoSwipe){
+			
+			$(document).ready(function(){
+				
+				$('div.gallery-page')
+					.live('pageshow', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							options = {},
+							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+							
+						return true;
+						
+					})
+					
+					.live('pagehide', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+							PhotoSwipe.detatch(photoSwipeInstance);
+						}
+						
+						return true;
+						
+					});
+				
+			});
+		
+		}(window, window.jQuery, window.Code.PhotoSwipe));
+		
+	</script>
+
+</head>
+<body>
+<!--Paquetes entre semana -->
+<!--PAGINA 3 -->
+<!--MAPA DEL HOTEL -->
+<div data-role="page" data-add-back-btn="true" id="mapa-del-hotel" class="gallery-page">
+<div data-role="header">
+<a href="index.html" target="_self" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" ><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+<h1>Mapa del Hotel</h1>
+</div>
+<div data-role="content">
+
+<!-- Mapa del hotel -->
+<!-- Responsive iFrame -->
+<div class="Flexible-container">
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+<iframe onload='javascript:resizeIframe(this);' width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msid=205870868162232183845.0004eb021d15c21582fa5&amp;msa=0&amp;ie=UTF8&amp;ll=10.272323,-84.524249&amp;spn=0.018939,0.033023&amp;t=h&amp;output=embed"></iframe>
+</div>
+
+<!-- /Mapa del hotel -->
+</div>
+<div data-role="footer">
+<h4><a href="../promos/reservacion-movil/" target="_self">Click para reservar</a> | <a href="tel:+50624479331">Click para llamar!</a></h4>
+</div>
+</div>
+</body>
+</html>
